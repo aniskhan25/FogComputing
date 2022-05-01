@@ -1,0 +1,11 @@
+<configuration>
+
+<input>
+<net-file value="mahattan.net.xml" />
+<route-files value="mahattan.rou.xml" />
+</input>
+<time>
+<begin value="0" />
+<end value="5000" />
+</time>
+</configuration>

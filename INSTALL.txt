@@ -1,0 +1,36 @@
+Install Minconda 64 bit
+Open Admin Powershell
+conda update conda
+conda update --all
+conda create -n tensorflow pip python=3.6
+conda activate tensorflow
+
+https://docs.floydhub.com/guides/environments/
+
+since no AVX on older CPU so using configuration below
+
+pip install tensorflow==1.5.0
+pip install keras==2.1.6
+
+python -c 'import tensorflow as tf; print(tf.__version__)'
+python -c 'import keras; print(keras.__version__)'
+
+sudo apt-get install -y sumo
+
+https://towardsdatascience.com/setup-an-environment-for-machine-learning-and-deep-learning-with-anaconda-in-windows-5d7134a3db10
+
+conda env config vars set my_var=value
+conda activate tensorflow
+conda env config vars list
+
+$SUMO_HOME/tools/randomTrips.py -n grid.net.xml -o grid.trips.xml -e 3600
+$SUMO_HOME/tools/randomTrips.py -n grid.net.xml -o grid.trips.xml -b 0 -e 3600 -p ((3600-0)/10000)
+$SUMO_HOME/tools/randomTrips.py -n grid.net.xml -o grid.trips.xml -b 0 -e 3600 --binomial 8
+$SUMO_HOME/tools/randomTrips.py -n grid.net.xml -o grid.trips.xml --begin 0 --end 1 --binomial 8 --flows 500 --jtrrouter --trip-attributes 'departPos="random" departSpeed="max"'
+$SUMO_HOME/tools/randomTrips.py -n grid.net.xml -o grid.trips.xml --begin 0 --end 1 --flows 500 --jtrrouter \ --trip-attributes 'departPos="random" departSpeed="max"'
+$SUMO_HOME/tools/randomTrips.py -n grid.net.xml -e 10000 -o grid.trips.xml
+$SUMO_HOME/bin/duarouter --net-file grid.net.xml --trip-files grid.trips.xml -o grid.rou.xml
+
+$SUMO_HOME/tools/randomTrips.py -n grid.net.xml -o grid.trips.xml -b 0 -e 3600 -p 0.36 --binomial 8
+
+((3600-0)/10000)
